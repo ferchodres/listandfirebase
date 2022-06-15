@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "468384957010",
+    "project_id": "flutterappandyfer",
+    "storage_bucket": "flutterappandyfer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468384957010:android:a799830851d256b4aed58b",
+        "android_client_info": {
+          "package_name": "com.example.listas_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468384957010-j4qljlc438vcgu1oabd1gdk65de7dq07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1WZ1jRfKOJpQoZoXS08NFm0etH4sQNoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468384957010-j4qljlc438vcgu1oabd1gdk65de7dq07.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
