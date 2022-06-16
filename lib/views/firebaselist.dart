@@ -23,16 +23,4 @@ class FirebaseList extends StatelessWidget{
     
     
   }
-
-  void callDatabase(){
-
-    DatabaseReference starCountRef = 
-    FirebaseDatabase.instance.ref("/registros");
-    starCountRef.onValue.listen((event) {
-      final data = event.snapshot.value;
-      data.toString();
-     });
-    
-  }
-  
 }
