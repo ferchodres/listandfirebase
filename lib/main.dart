@@ -3,6 +3,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:listas_flutter/firebase_options.dart';
 import 'package:listas_flutter/views/firebaselist.dart';
+import 'package:listas_flutter/views/prueba.dart';
+import 'package:listas_flutter/crud/savepage.dart';
 ///import 'package:listas_flutter/views/page1.dart';
 
 ///import 'views/listview.dart';
@@ -13,22 +15,27 @@ void main() async{
 WidgetsFlutterBinding.ensureInitialized();
 await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 callDatabase();
-runApp(const MyApp());
+runApp(const MyApp()); // let to run the app
 }
 
 
 
 class MyApp extends StatelessWidget {
-
   const MyApp({Key? key}) : super(key: key); 
 
   
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      initialRoute: "/",
+      routes: {
+        "/": (_) => const Prueba(), // (_) es un buildcontext vacio
+        "/savepage": (_) => const SavePage()
+      },
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      home: FirebaseList()
+      //home: const Prueba(),
+      
     );
   }
 }
