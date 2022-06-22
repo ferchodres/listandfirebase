@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:listas_flutter/firebase_options.dart';
+import 'package:listas_flutter/splash/splash.dart';
 import 'package:listas_flutter/views/firebaselist.dart';
 import 'package:listas_flutter/views/prueba.dart';
 import 'package:listas_flutter/crud/savepage.dart';
@@ -13,8 +14,8 @@ import 'package:listas_flutter/crud/savepage.dart';
 void main() async{
 
 WidgetsFlutterBinding.ensureInitialized();
-await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-callDatabase();
+await Firebase.initializeApp();
+
 runApp(const MyApp()); // let to run the app
 }
 
@@ -26,15 +27,15 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: "/",
+    return const MaterialApp(
+/*       initialRoute: "/",
       routes: {
         "/": (_) => const Prueba(), // (_) es un buildcontext vacio
         "/savepage": (_) => const SavePage()
-      },
+      }, */
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      //home: const Prueba(),
+      home: Splash(),
       
     );
   }
@@ -46,10 +47,10 @@ class MyApp extends StatelessWidget {
 * this event is a listener event, which means is update on real time
 * in order to print the answer, you must convert data to something readable */
 
-void callDatabase() {
+/* void callDatabase() {
   DatabaseReference starCountRef = FirebaseDatabase.instance.ref('/registros/');
   starCountRef.onValue.listen((event) {
     final data = event.snapshot.value;
     print(data.toString());
   });
-}
+} */
